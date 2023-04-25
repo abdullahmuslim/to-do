@@ -1,0 +1,837 @@
+
+@media screen and (max-width: 480px){
+    /*Tasks*/
+  .desktop, .tablet {
+    display: none;
+  }
+  #tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100vw;
+    padding-bottom: 40px;
+  }
+  .aTask {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 95vw;
+    margin-block: 10px;
+    border-radius: 2vw;
+    padding-inline:5px;
+  }
+  .aTask > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+  }
+  .aTask > div > p {
+    padding-inline: 2px;
+    width: 85vw;
+    overflow-x: hidden;
+  }
+  .aTask > svg {
+    height: auto;
+    width: 10%;
+  }
+  /*Filters*/
+  #filters {
+    display: flex;
+    justify-content: flex-end;
+    width: 95vw;
+  }
+  #filter {
+    padding: 2px;
+    border-radius: 2vw;
+    width: 15vw;
+  }
+  #extraFilters {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  #extraFilters > div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5vw;
+    width: 85vw;
+    align-items: center;
+  }
+  #extraFilters *{
+    display: unset;
+  }
+  #extraFilters > div > p{
+    max-width: 30%;
+    white-space: nowrap;
+    padding: 5px;
+    margin-inline: 2px;
+  }
+  #extraFilters > div > div:last-child{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    width: 85vw;
+  }
+  #advanceFilters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    width: 100%;
+  }
+  #advanceFilters legend {
+    display: none;
+  }
+  #advanceFilters fieldset {
+    border: none;
+    border-radius: 2px;
+  }
+  #advanceFilters > div{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+  #advanceFilters > div > p {
+    width: 100%;
+  }
+  /*addTask*/
+  #addTask {
+    position: fixed;
+    bottom: 3px;
+    left: 2.5vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 95vw;
+  }
+  #addTask > *{
+    margin-block: 5px;
+  }
+  .addTask > input, .addTask > textarea{
+    display: block;
+    width: 100%;
+  }
+  .addtask select {
+    width: 30%;
+  }
+  .addTaskExtras {
+    display: none;
+  }
+  .excludeExtras > input:first-child {
+    width: 70vw;
+  }
+  .excludeExtras > input:last-child {
+    width: unset;
+  }
+  .excludeExtras > select, .excludeExtras > textarea {
+    display: none;
+  }
+  .updateTask {
+    display: none;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 95vw;
+    padding: 10px;
+  }
+  .updateTask > input:first-child {
+    width: 70vw;
+  }
+  .updateTask > textarea {
+    width: 100%;
+  }
+  .updateTask > select {
+    width: 30%;
+  }
+  .updateTask > select:nth-child(2)  > option {
+    display: none;
+  }
+  /*Typography*/
+  /*Tasks*/
+  .aTask {
+    color: var(--whites);
+    background-color: var(--lightBlue);
+  }
+  .aTask > div > p {
+    white-space: nowrap;
+  }
+  /*Filters*/
+  #filter {
+    font-size: 5vw;
+    text-align: center;
+    background-color: var(--mediumGreen);
+  }
+  #extraFilters > div{
+    color: var(--whites);
+    background-color: var(--blacks);
+  }
+  .btnType1 {
+    background-color: #212121;
+  }
+  .selected {
+    background-color: var(--mediumGreen);
+  }
+  #advanceFilters > div > p{
+    color: var(--mediumBlue);
+  }
+  /*addTask*/
+  #addTask {
+    background-color: var(--whites);
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 1023px){
+  /*Tasks*/
+  .mobile, .desktop{
+    display: none;
+  }
+  .tablet{
+    display: unset;
+  }
+  #tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100vw;
+  }
+  #tasks > li {
+    border-bottom: 2px solid var(--blacks);
+  }
+  .aTask {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 95vw;
+    margin-block: 10px;
+    border-radius: 2vw;
+  }
+  .aTask > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .aTask > div > p:nth-child(2) {
+    padding-inline: 10px;
+    width: 70%;
+    overflow-x: hidden;
+  }
+  .aTask > svg {
+    height: auto;
+    width: 32px;
+    margin-inline: 5px;
+  }
+  /*Filters*/
+  #filters {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 95vw;
+    margin-inline: 2.5vw;
+    overflow-x: auto;
+  }
+  #extraFilters > div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  #extraFilters > div > p {
+    display: inline;
+    max-width: 25%;
+    white-space: nowrap;
+    padding: 10px;
+    margin-inline: 5px;
+  }
+  legend {
+    pointer-events: none;
+  }
+  #advanceFilters {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: space-between;
+    width: 100%;
+  }
+  #advanceFilters > div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+  #advanceFilters > div > fieldset {
+    display: inline;
+    max-width: 25%;
+    white-space: nowrap;
+    margin: 10px;
+    border: none;
+  }
+  #advanceFilters > div > p {
+    display: none;
+  }
+  /*addTask*/
+  #addTask {
+    position: fixed;
+    bottom: 3px;
+    left: 2.5vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 95vw;
+  }
+  #addTask > *{
+    margin-block: 5px;
+  }
+  .addTask > input, .addTask > textarea{
+    display: block;
+    width: 100%;
+  }
+  .addtask select {
+    width: 30%;
+  }
+  .addTaskExtras {
+    display: none;
+  }
+  .excludeExtras > input:first-child {
+    padding: 0;
+    margin: 0;
+    width: 91%;
+  }
+  .excludeExtras > input:last-child {
+    padding: 0;
+    margin: 0;
+    width: 8%;
+  }
+  .excludeExtras > select, .excludeExtras > textarea {
+    display: none;
+  }
+  .updateTask {
+    display: none;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 95vw;
+    padding: 10px;
+  }
+  .updateTask > input:first-child {
+    width: 91%;
+  }
+  .updateTask > textarea {
+    width: 100%;
+  }
+  .updateTask > select {
+    width: 30%;
+  }
+  .updateTask > select:nth-child(2)  > option {
+    display: none;
+  }
+  /*typography*/
+  /*Filters*/
+  .aTask {
+    color: var(--whites);
+    background-color: var(--lightBlue);
+  }
+  .aTask > div > p {
+    white-space: nowrap;
+  }
+  #advance {
+    font-size: 20px;
+    text-align: center;
+    background-color: #efefef;
+  }
+  .btnType1 {
+    background-color: #efefef;
+  }
+  .selected {
+    background-color: var(--mediumBlue);
+  }
+  #advanceFilters > div > p{
+    color: var(--mediumBlue);
+  }
+  /*addTask*/
+  #addTask {
+    background-color: var(--whites);
+  }
+}
+@media screen and (min-width: 1024px){
+  /*Tasks*/
+  .mobile, .tablet{
+    display: none;
+  }
+  .desktop{
+    display: unset;
+  }
+  #tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 800px;
+    border: 2px solid var(--blacks);
+  }
+  .aTask {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 770px;
+    margin-block: 10px;
+    border-radius: 2vw;
+  }
+  .aTask > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+  }
+  .aTask > div > p:nth-child(2) {
+    padding-inline: 10px;
+    width: 70%;
+    overflow-x: hidden;
+  }
+  .aTask > svg {
+    height: auto;
+    width: 32px;
+  }
+  /*Filters*/
+  #filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 800px;
+  }
+  #extraFilters > div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    width: 600px;
+  }
+  #extraFilters > div > p{
+    display: inline;
+    max-width: 25%;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  #extraFilters > div > div:last-child{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    width: 75%;
+  }
+  #extraFilters > div > div:last-child > p:first-child {
+    visibility: hidden;
+  }
+  #advanceFilters {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    width: 100%;
+  }
+  #advanceFilters > div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    width: 600px;
+  }
+  #advanceFilters legend {
+    display: none;
+  }
+  #advanceFilters fieldset {
+    border: none;
+    border-radius: 2px;
+  }
+  #advanceFilters > div > p {
+    width: 100%;
+  }
+  #advance {
+    padding: 10px;
+    border-radius: 3px;
+  }
+  /*addTask*/
+  #addTask {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: space-between;
+    width: 100%;
+  }
+  #addTask > *{
+    margin-block: 5px;
+  }
+  .addTask > input:first-child, .addTask > textarea{
+    display: block;
+    width: 100%;
+  }
+  .addtask select {
+    width: 30%;
+  }
+  .addTaskExtras {
+    display: none;
+  }
+  .excludeExtras > input:first-child {
+    width: 80%;
+  }
+  .excludeExtras > select, .excludeExtras > textarea {
+    display: none;
+  }
+  .updateTask {
+    display: none;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 100%;
+    padding: 10px;
+  }
+  .updateTask > input:first-child {
+    width: 80%;
+  }
+  .updateTask > textarea {
+    width: 100%;
+  }
+  .updateTask > select {
+    width: 30%;
+  }
+  .updateTask > select:nth-child(2)  > option {
+    display: none;
+  }
+  /*Typography*/
+  /*Tasks*/
+  .aTask {
+    color: var(--whites);
+    background-color: var(--lightBlue);
+    box-shadow: 2px 2px 2px var(--darkBlue) -2px -2px 2px var(--lightBlue);
+  }
+  .aTask > div > p {
+    text-align: left;
+    white-space: nowrap;
+  }
+  /*Filters*/
+  .btnType1 {
+    background-color: #efefef;
+  }
+  .selected {
+    background-color: var(--mediumBlue);
+  }
+  #advance {
+    font-size: 20px;
+    text-align: center;
+    background-color: #efefef;
+  }
+  #advanceFilters > div > p{
+    color: var(--mediumBlue);
+  }
+  /*addTask*/
+  #addTask {
+    background-color: var(--whites);
+  }
+}
+:root {
+  --whites: #fff;
+  --blacks: #000;
+  --gray: #aaaaaa;
+  --lightBlue: #add8e6;
+  --mediumBlue: #3498db;
+  --darkBlue: #2c3e50;
+  --lightGreen: #90ee90;
+  --mediumGreen: #2ecc71;
+  --darkGreen: #008000;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul:empty:before{
+  content: "Nothing to display, add new task to get started.";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+form > input:last-child:focus{
+  outline: none;
+}
+form > input:first-child:focus, form > select:focus, form > textarea:focus{
+  outline: 2px solid var(--mediumGreen);
+}
+
+/* Layout */
+
+/*DateTime*/
+#dateTimePicker option{
+  display: none;
+}
+#dateTime {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+#date {
+  height: 50vh;
+  width: 70vw;
+  margin: 0;
+}
+#date > div:nth-child(2) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 70vw;
+  padding: 5vw;
+}
+#info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+}
+#control {
+  display: flex;
+  flex-flow: column no-wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 70vw;
+}
+#control svg {
+  width: 3%;
+}
+#date > div:nth-child(2) > p {
+  margin: 0;
+  width: 10vw;
+}
+#info > div:first-child{
+  box-sizing: border-box;
+  padding-inline: 5px;
+  width: 100%;
+}
+#info *{
+  padding-block: 7px;
+  margin: 0;
+}
+#time {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  width: 70vw;
+  padding: 5vw;
+  margin-top: 20px;
+}
+#time > :not(div:last-child, div:nth-child(2)){
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  width: 30%;
+  overflow-y: scroll;
+  scroll-snap-type: y;
+}
+#time > div > p {
+  z-index: 3;
+  margin: 0;
+  padding: 6px 3px;
+  scroll-snap-align: center;
+}
+#time > :not(div:last-child) > p:first-child {
+  margin-top: 29px;
+}
+#time > :not(div:last-child) > p:last-child {
+  margin-bottom: 29px;
+}
+#time > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#overlay {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  width: 70vw;
+  padding: 5vw;
+}
+#overlay > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+}
+#overlay > div > :not(p:nth-child(2)) {
+  width: 29%;
+  height: 100%;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+}
+ .aDay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vw;
+  border-radius: 50%;
+}
+#comds {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+#comds > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#comds p{
+  padding: 6px;
+}
+#deleteModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+#deleteBox {
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: space-between;
+ align-items: space-around;
+ border-radius: 10px;
+ padding: 5px;
+ min-width: 250px;
+}
+#deleteBox > p {
+  width: 100%;
+}
+/*Typography*/
+body {
+  color: var(--blacks);
+  background-color: var(--whites);
+}
+#dateTime {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#dateTime > div{
+  color: var(--blacks);
+  background-color: var(--whites);
+}
+#info > div:first-child{
+  color: var(--whites);
+  background-color: var(--mediumBlue);
+}
+#dayMonth {
+  font-size: 20px;
+  font-weight: 800;
+  text-align: left;
+}
+#calendar {
+  text-align: center;
+}
+.present{
+  color: var(--mediumBlue);
+}
+.choosen {
+  color: #000;
+  background-color: var(--mediumBlue);
+}
+#time > div{
+  font-size: 20px;
+}
+#overlay {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent, rgba(0, 0, 0, 0.5));
+}
+#comds {
+  color: var(--mediumBlue);
+  font-size: 15px;
+}
+#deleteBox {
+  color: var(--whites);
+  background-color: var(--blacks);
+}
+.pastDue {
+  background-color: #e6bbad;
+}
+.completed {
+  background-color: var(--gray);
+}
+.hidden {
+  display: none;
+}
