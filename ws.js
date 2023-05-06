@@ -65,7 +65,7 @@ self.addEventListener("install", event => {
 
 //activate event
 self.addEventListener("activate", event => {
-  
+  //listens for activate event
 })
 
 //listen for fetch event
