@@ -1,0 +1,32 @@
+{
+  "name": "To-do app",
+  "short_name": "To-do",
+  "description": "Manage and keep track of tasks.",
+  "start_url": "index.html",
+  "background_color": "#3498db",
+  "theme_color": "#3294db",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/appIcons/task-list-72.webp",
+      "type": "image/webp",
+      "sizes": "72x72"
+    },
+    {
+      "src": "icons/appIcons/task-list-96.webp",
+      "type": "image/webp",
+      "sizes": "96x96"
+    },
+    {
+      "src": "icons/appIcons/task-list-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "icons/appIcons/task-list-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

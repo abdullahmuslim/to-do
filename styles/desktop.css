@@ -1,0 +1,185 @@
+/*Tasks*/
+.mobile, .tablet{
+  display: none;
+}
+.desktop{
+  display: unset;
+}
+#tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 800px;
+  border: 2px solid var(--blacks);
+}
+.aTask {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 770px;
+  margin-block: 10px;
+  border-radius: 2vw;
+}
+.aTask > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+.aTask > div > p:nth-child(2) {
+  padding-inline: 10px;
+  width: 70%;
+  overflow-x: hidden;
+}
+.aTask > svg {
+  height: auto;
+  width: 32px;
+}
+/*Filters*/
+#filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 800px;
+}
+#extraFilters > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  width: 600px;
+}
+#extraFilters > div > p{
+  display: inline;
+  max-width: 25%;
+  white-space: nowrap;
+  padding: 10px;
+}
+#extraFilters > div > div:last-child{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  width: 75%;
+}
+#extraFilters > div > div:last-child > p:first-child {
+  visibility: hidden;
+}
+#advanceFilters {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  width: 100%;
+}
+#advanceFilters > div{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  width: 600px;
+}
+#advanceFilters legend {
+  display: none;
+}
+#advanceFilters fieldset {
+  border: none;
+  border-radius: 2px;
+}
+#advanceFilters > div > p {
+  width: 100%;
+}
+#advance {
+  padding: 10px;
+  border-radius: 3px;
+}
+/*addTask*/
+#addTask {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: space-between;
+  width: 100%;
+}
+#addTask > *{
+  margin-block: 5px;
+}
+.addTask > input:first-child, .addTask > textarea{
+  display: block;
+  width: 100%;
+}
+.addtask select {
+  width: 30%;
+}
+.addTaskExtras {
+  display: none;
+}
+.excludeExtras > input:first-child {
+  width: 80%;
+}
+.excludeExtras > select, .excludeExtras > textarea {
+  display: none;
+}
+.updateTask {
+  display: none;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: space-between;
+  width: 100%;
+  padding: 10px;
+}
+.updateTask > input:first-child {
+  width: 80%;
+}
+.updateTask > textarea {
+  width: 100%;
+}
+.updateTask > select {
+  width: 30%;
+}
+.updateTask > select:nth-child(2)  > option {
+  display: none;
+}
+/*Typography*/
+/*Tasks*/
+.aTask {
+  color: var(--whites);
+  background-color: var(--lightBlue);
+  box-shadow: 2px 2px 2px var(--darkBlue) -2px -2px 2px var(--lightBlue);
+}
+.aTask > div > p {
+  text-align: left;
+  white-space: nowrap;
+}
+/*Filters*/
+.btnType1 {
+  background-color: #efefef;
+}
+.selected {
+  background-color: var(--mediumBlue);
+}
+#advance {
+  font-size: 20px;
+  text-align: center;
+  background-color: #efefef;
+}
+#advanceFilters > div > p{
+  color: var(--mediumBlue);
+}
+/*addTask*/
+#addTask {
+  background-color: var(--whites);
+}
+
+#menu {
+  display: none;
+}
