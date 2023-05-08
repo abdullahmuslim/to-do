@@ -1,14 +1,14 @@
-
-:root {
+:root{
   --whites: #fff;
   --blacks: #000;
-  --gray: #aaaaaa;
-  --lightBlue: #add8e6;
-  --mediumBlue: #3498db;
-  --darkBlue: #2c3e50;
-  --lightGreen: #90ee90;
-  --mediumGreen: #2ecc71;
+  --light-gray: #aaaaaa;
+  --dark-gray: #555555;
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --tertiary-color: #add8e6;
   --darkGreen: #008000;
+  --lightGreen: #90ee90;
+  --darkBlue: #2c3e50;
 }
 html{
   scroll-behavior: smooth;
@@ -35,7 +35,7 @@ form > input:last-child:focus{
   outline: none;
 }
 form > input:first-child:focus, form > select:focus, form > textarea:focus{
-  outline: 2px solid var(--mediumGreen);
+  outline: 2px solid var(--secondary-color);
 }
 
 /* Layout */
@@ -216,7 +216,18 @@ form > input:first-child:focus, form > select:focus, form > textarea:focus{
 #deleteBox > p {
   width: 100%;
 }
+#errorPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#errorPage > a {
+  padding: 5px;
+  border-radius: 5px;
+}
 /*Typography*/
+
 body {
   color: var(--blacks);
   background-color: var(--whites);
@@ -230,7 +241,7 @@ body {
 }
 #info > div:first-child{
   color: var(--whites);
-  background-color: var(--mediumBlue);
+  background-color: var(--primary-color);
 }
 #dayMonth {
   font-size: 20px;
@@ -241,11 +252,11 @@ body {
   text-align: center;
 }
 .present{
-  color: var(--mediumBlue);
+  color: var(--primary-color);
 }
 .choosen {
   color: #000;
-  background-color: var(--mediumBlue);
+  background-color: var(--primary-color);
 }
 #time > div{
   font-size: 20px;
@@ -254,7 +265,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent, rgba(0, 0, 0, 0.5));
 }
 #comds {
-  color: var(--mediumBlue);
+  color: var(--primary-color);
   font-size: 15px;
 }
 #deleteBox {
@@ -265,12 +276,23 @@ body {
   background-color: #e6bbad;
 }
 .completed {
-  background-color: var(--gray);
+  background-color: var(--light-gray);
 }
 .hidden {
   display: none;
 }
 
-#menu {
-  display: none;
+#errorPage {/* 
+  color: var(--tertiary-color); */
+  background-color: var(--whites);
+}
+#errorPage > h5 {
+  color: var(--light-gray);
+  font-size: 2em;
+  font-weight: 800;
+}
+#errorPage > a {
+  text-decoration: none;
+  color: #000;
+  background-color: var(--primary-color);
 }

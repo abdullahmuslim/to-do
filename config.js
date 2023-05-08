@@ -1,5 +1,5 @@
 SystemJS.config({
-  baseURL:'/to-do',
+  baseURL:'/',
   defaultExtension: true,
   packages: {
     ".": {

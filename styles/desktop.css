@@ -1,3 +1,6 @@
+aside {
+  display: none;
+}
 /*Tasks*/
 .mobile, .tablet{
   display: none;
@@ -153,8 +156,7 @@
 /*Tasks*/
 .aTask {
   color: var(--whites);
-  background-color: var(--lightBlue);
-  box-shadow: 2px 2px 2px var(--darkBlue) -2px -2px 2px var(--lightBlue);
+  background-color: var(--tertiary-color);
 }
 .aTask > div > p {
   text-align: left;
@@ -165,7 +167,7 @@
   background-color: #efefef;
 }
 .selected {
-  background-color: var(--mediumBlue);
+  background-color: var(--primary-color);
 }
 #advance {
   font-size: 20px;
@@ -173,7 +175,7 @@
   background-color: #efefef;
 }
 #advanceFilters > div > p{
-  color: var(--mediumBlue);
+  color: var(--primary-color);
 }
 /*addTask*/
 #addTask {

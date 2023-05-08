@@ -1,4 +1,4 @@
-const staticCache = "static-cache";
+const staticCache = "static-cache-v2";
 const assets = [
   "/",
   "index.html",
@@ -14,6 +14,7 @@ const assets = [
   "components/TaskInfo.js",
   "components/Tasks.js",
   "components/TimePicker.js",
+  "errorHandlers/errorPage.html",
   "icons/appIcons/task-list-128.png",
   "icons/appIcons/task-list-512.png",
   "icons/appIcons/task-list-72.webp",
@@ -63,16 +64,29 @@ self.addEventListener("install", event => {
   );
 })
 
-//activate event
+//listen for activate event
 self.addEventListener("activate", event => {
-  //listens for activate event
-})
+  event.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.filter(key => key !== staticCache).map(aCache => {
+          caches.delete(aCache);
+        })
+      )
+    })
+  );
+});
 
 //listen for fetch event
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(cacheRes => {
-      return cacheRes || fetch(event.request);
+      return cacheRes || fetch(event.request)
+    })
+    .catch(() => {
+      if (event.request.url.indexOf(".html") != -1){
+        return caches.match('errorHandlers/errorPage.html');
+      }
     })
   )
 })

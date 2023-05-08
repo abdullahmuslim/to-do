@@ -1,3 +1,6 @@
+aside {
+  display: none;
+}
 /*Tasks*/
 .mobile, .desktop{
   display: none;
@@ -156,7 +159,7 @@ legend {
 /*Filters*/
 .aTask {
   color: var(--whites);
-  background-color: var(--lightBlue);
+  background-color: var(--tertiary-color);
 }
 .aTask > div > p {
   white-space: nowrap;
@@ -170,10 +173,10 @@ legend {
   background-color: #efefef;
 }
 .selected {
-  background-color: var(--mediumBlue);
+  background-color: var(--primary-color);
 }
 #advanceFilters > div > p{
-  color: var(--mediumBlue);
+  color: var(--primary-color);
 }
 /*addTask*/
 #addTask {
