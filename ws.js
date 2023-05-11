@@ -85,7 +85,7 @@ self.addEventListener("fetch", event => {
     })
     .catch(() => {
       if (event.request.url.indexOf(".html") != -1){
-        return caches.match('errorHandlers/errorPage.html');
+        return caches.match('/errorHandlers/errorPage.html');
       }
     })
   )

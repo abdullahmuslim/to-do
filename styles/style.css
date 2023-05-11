@@ -18,6 +18,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 ul {
   list-style-type: none;
@@ -226,6 +227,22 @@ form > input:first-child:focus, form > select:focus, form > textarea:focus{
   padding: 5px;
   border-radius: 5px;
 }
+.toggler {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  width: 50px;
+  border: 2px solid var(--whites);
+  border-radius: 10px;
+}
+.toggleButton{
+  position: relative;
+  top: 0;
+  left: -5%;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
 /*Typography*/
 
 body {
@@ -295,4 +312,10 @@ body {
   text-decoration: none;
   color: #000;
   background-color: var(--primary-color);
+}
+.toggler{
+  background-color: var(--primary-color);
+}
+.toggleButton{
+  background-color: var(--secondary-color);
 }

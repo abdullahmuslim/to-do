@@ -1,5 +1,13 @@
-aside {
+#menu {
   display: none;
+}
+#todo-app {
+  display: flex;
+  flex-flow: row wrap;
+  
+}
+#menuOptions {
+  height: 100vh;
 }
 /*Tasks*/
 .mobile, .tablet{
@@ -180,8 +188,4 @@ aside {
 /*addTask*/
 #addTask {
   background-color: var(--whites);
-}
-
-#menu {
-  display: none;
 }

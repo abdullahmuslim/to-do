@@ -24,6 +24,7 @@ if ("serviceWorker" in navigator){
 }
 ReactDOM.render(
   <React.Fragment>
+    <Menu />
     <Provider store={store}>
       <AddTask />
       <div>
@@ -33,6 +34,5 @@ ReactDOM.render(
       <DateTimePicker />
       <DeleteModal />
     </Provider>
-    <Menu />
   </React.Fragment>,
 document.getElementById("todo-app"));

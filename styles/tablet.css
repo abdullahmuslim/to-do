@@ -1,6 +1,61 @@
-aside {
-  display: none;
+#trans {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  width: 100vw;
+  height: 100vh;
 }
+#menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+}
+#menu > svg {
+  height: 30px;
+}
+#menu > p {
+  padding-inline: 5vw;
+  margin: 0;
+}
+#menuOptions {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: -70vw;
+  height: 100vh;
+  width: 70vw;
+  transition: all 0.3s ease-in;
+}
+#menuOptions > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+#attribution {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position:absolute;
+  bottom: 10px;
+  left: 5px;
+  padding: 5vw;
+}
+#attribution a{
+  text-decoration: none;
+}
+#attribution > a > svg{
+  margin-block: 0;
+  padding-block: 0;
+  padding: 10px;
+  width: 40px;
+}
+
 /*Tasks*/
 .mobile, .desktop{
   display: none;
@@ -156,6 +211,30 @@ legend {
   display: none;
 }
 /*typography*/
+nav {
+  background-color: var(--primary-color)
+}
+#menu > p {
+  color: var(--whites);
+  font-size: 40px;
+}
+#menuOptions {
+  color: var(--whites);
+  background-color: var(--blacks);
+}
+#attribution {
+  font-size: 16px;
+}
+#attribution img {
+  width: 16px;
+}
+#attribution a{
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+#attribution > a:first-child > svg > path:first-child{
+  fill: var(--whites);
+}
 /*Filters*/
 .aTask {
   color: var(--whites);
@@ -181,8 +260,4 @@ legend {
 /*addTask*/
 #addTask {
   background-color: var(--whites);
-}
-
-#menu {
-  display: none;
 }
