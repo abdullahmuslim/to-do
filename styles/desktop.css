@@ -1,13 +1,165 @@
+/*layout*/
+
+/*DateTime*/
+#dateTimePicker option{
+  display: none;
+}
+#dateTime {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+#dateTime > div {
+  width: 500px;
+  height: auto;
+}
+#date {
+  width: 500px;
+  margin: 0;
+}
+#date > div:nth-child(2) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+#info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+#control {
+  display: flex;
+  flex-flow: column no-wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 450px;
+}
+#control svg {
+  width: 3%;
+}
+#date > div:nth-child(2) > p {
+  margin: 0;
+  width: 71px;
+}
+#info > div:first-child{
+  box-sizing: border-box;
+  padding-inline: 5px;
+  width: 100%;
+}
+#info *{
+  padding-block: 7px;
+  margin: 0;
+}
+ .aDay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 71px;
+  border-radius: 50%;
+}
+#comds {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+#comds > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#comds p{
+  padding: 6px;
+}
+#time {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 500px;
+  padding: 5vw;
+  margin-top: 20px;
+}
+#time > :not(div:last-child, div:nth-child(2)){
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  width: 25%;
+  overflow-y: scroll;
+  scroll-snap-type: y;
+}
+#time > div > p {
+  display: none;
+}
+#time > div > input {
+  width: 50px;
+}
+#time > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#time > div > div {
+  padding: 7px;
+  border-radius: 5%;
+}
+#overlay {
+  display: none;
+}
 #menu {
   display: none;
 }
 #todo-app {
   display: flex;
   flex-flow: row wrap;
-  
 }
-#menuOptions {
-  height: 100vh;
+#menuOptions > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+#attribution {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position:absolute;
+  bottom: 10px;
+  left: 5px;
+  padding: 5vw;
+}
+#attribution a{
+  text-decoration: none;
+}
+#attribution > a > svg{
+  margin-block: 0;
+  padding-block: 0;
+  padding: 10px;
+  width: 40px;
 }
 /*Tasks*/
 .mobile, .tablet{
@@ -161,6 +313,26 @@
   display: none;
 }
 /*Typography*/
+#time > div > div {
+  background-color: var(--primary-color);
+}
+nav {
+  color: var(--blacks);
+  background-color: var(--light-gray);
+}
+#attribution {
+  font-size: 16px;
+}
+#attribution img {
+  width: 16px;
+}
+#attribution a{
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+#attribution > a:first-child > svg > path:first-child{
+  fill: var(--blacks);
+}
 /*Tasks*/
 .aTask {
   color: var(--whites);
@@ -172,7 +344,7 @@
 }
 /*Filters*/
 .btnType1 {
-  background-color: #efefef;
+  background-color: var(--light-gray);
 }
 .selected {
   background-color: var(--primary-color);
@@ -180,7 +352,7 @@
 #advance {
   font-size: 20px;
   text-align: center;
-  background-color: #efefef;
+  background-color: var(--light-gray);
 }
 #advanceFilters > div > p{
   color: var(--primary-color);

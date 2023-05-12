@@ -37,6 +37,39 @@ function TimePicker(props) {
     state.meridiemCrit = firstMerFig.getBoundingClientRect().top + window.scrollY;
   }
   
+  function changeMeridiem(e){
+    const el = e.target;
+    switch (el.textContent){
+      case "AM":
+        el.textContent = "PM";
+        break;
+      case "PM":
+        el.textContent = "AM";
+        break;
+    }
+  }
+  
+  function handleChange(e){
+    const el = e.target;
+    el.value = el.value.replace(/\D/g, "");
+    const value = el.value;
+    switch (e.target.name){
+      case "hour":
+        if (parseInt(value) === 0){
+          el.value = 1;
+        }else if(parseInt(value) > 12){
+          el.value = 12;
+        }
+        break;
+      case "min":
+        if (parseInt(value) > 59){
+          el.value = 59;
+        }
+        break;
+    }
+    updateTimeState();
+  }
+  
   function recordHour(){
     let hour = Array.from(hours.current.children);
     hour.map((anHour, index) => {
@@ -47,7 +80,7 @@ function TimePicker(props) {
         updateTimeState();
       }
     })
-    clearTimeout(hoursHandler);
+    clearTimeout(timedHourRecord);
   }
   
   function recordMinute(){
@@ -59,7 +92,7 @@ function TimePicker(props) {
         updateTimeState();
       }
     })
-    clearTimeout(minHandler);
+    clearTimeout(timedMinRecord);
   }
   
   function recordMeridiem(){
@@ -75,9 +108,19 @@ function TimePicker(props) {
   }
   
   function updateTimeState(){
-    let time = (state.hour * 60 * 60) + (state.min * 60);
-    let meridian = (state.mer === 0) ? "AM" : "PM";
-    props.setTimeState([time, meridian]);
+    const el = document.getElementById("time");
+    let display = window.getComputedStyle(el.firstElementChild.firstElementChild).getPropertyValue("display");
+    if (display === "none"){
+      let hour = (el.firstElementChild.lastElementChild.value === "") ? 1 : parseInt(el.firstElementChild.lastElementChild.value);
+      let min = (el.children[2].lastElementChild.value === "")? 0 : parseInt(el.children[2].lastElementChild.value);
+      let mer = el.children[3].lastElementChild.textContent;
+      let time = (hour * 60 * 60) + (min * 60);
+      props.setTimeState([time, mer]);
+    }else{
+      let time = (state.hour * 60 * 60) + (state.min * 60);
+      let meridian = (state.mer === 0) ? "AM" : "PM";
+      props.setTimeState([time, meridian]);
+    }
   }
   
   return (
@@ -86,7 +129,9 @@ function TimePicker(props) {
         numsIn(1, 12).map((num, key) => {
           return <p key={`hour${key}`}>{(num.toString().length === 1) ? `0${num}` : num}</p>
         })
-      }</div>
+      }
+      <input type="tel" placeholder="hour" className="desktop" name="hour" onChange={handleChange} />
+      </div>
       <div>:</div>
       <div onTouchEnd={() => timedMinRecord = setTimeout(recordMinute, 1000)
       } ref={minutes}>{
@@ -94,9 +139,12 @@ function TimePicker(props) {
           return <p key={`minute${key}`}>{(num.toString().length === 1) ? `0${num}` : num}</p>
         })
       }
+      <input type="tel" placeholder="minute" className="desktop" name="min" onChange={handleChange} />
       </div>
       <div onTouchEnd={() => timedMerRecord = setTimeout(recordMeridiem, 500)
-      } ref={meridiem}><p>AM</p><p>PM</p></div>
+      } ref={meridiem}><p>AM</p><p>PM</p>
+      <div className="desktop" onClick={changeMeridiem}>AM</div>
+      </div>
       <div id="overlay">
         <div>
         </div>

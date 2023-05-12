@@ -22,17 +22,20 @@ if ("serviceWorker" in navigator){
   .catch(() => {
   });
 }
+
 ReactDOM.render(
   <React.Fragment>
     <Menu />
-    <Provider store={store}>
-      <AddTask />
-      <div>
-        <Filters />
-        <Tasks />
-      </div>
-      <DateTimePicker />
-      <DeleteModal />
-    </Provider>
+    <div>
+      <Provider store={store}>
+        <AddTask />
+        <div>
+          <Filters />
+          <Tasks />
+        </div>
+        <DateTimePicker />
+        <DeleteModal />
+      </Provider>
+    </div>
   </React.Fragment>,
 document.getElementById("todo-app"));

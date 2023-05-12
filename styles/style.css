@@ -1,13 +1,13 @@
 :root{
   --whites: #fff;
   --blacks: #000;
-  --light-gray: #aaaaaa;
+  --light-gray: #efefef;
   --dark-gray: #555555;
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --tertiary-color: #add8e6;
+  --primary-color: #2ecc71;
+  --secondary-color: #3498db;
+  --tertiary-color: #90ee90;
   --darkGreen: #008000;
-  --lightGreen: #90ee90;
+  --lightBlue: #add8e6;
   --darkBlue: #2c3e50;
 }
 html{
@@ -40,160 +40,6 @@ form > input:first-child:focus, form > select:focus, form > textarea:focus{
 }
 
 /* Layout */
-
-/*DateTime*/
-#dateTimePicker option{
-  display: none;
-}
-#dateTime {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-#date {
-  height: 50vh;
-  width: 70vw;
-  margin: 0;
-}
-#date > div:nth-child(2) {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 70vw;
-  padding: 5vw;
-}
-#info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80vw;
-}
-#control {
-  display: flex;
-  flex-flow: column no-wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 70vw;
-}
-#control svg {
-  width: 3%;
-}
-#date > div:nth-child(2) > p {
-  margin: 0;
-  width: 10vw;
-}
-#info > div:first-child{
-  box-sizing: border-box;
-  padding-inline: 5px;
-  width: 100%;
-}
-#info *{
-  padding-block: 7px;
-  margin: 0;
-}
-#time {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-  width: 70vw;
-  padding: 5vw;
-  margin-top: 20px;
-}
-#time > :not(div:last-child, div:nth-child(2)){
-  position: relative;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  box-sizing: border-box;
-  height: 100%;
-  width: 30%;
-  overflow-y: scroll;
-  scroll-snap-type: y;
-}
-#time > div > p {
-  z-index: 3;
-  margin: 0;
-  padding: 6px 3px;
-  scroll-snap-align: center;
-}
-#time > :not(div:last-child) > p:first-child {
-  margin-top: 29px;
-}
-#time > :not(div:last-child) > p:last-child {
-  margin-bottom: 29px;
-}
-#time > div:nth-child(2) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#overlay {
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-  width: 70vw;
-  padding: 5vw;
-}
-#overlay > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 35px;
-}
-#overlay > div > :not(p:nth-child(2)) {
-  width: 29%;
-  height: 100%;
-  border-top: 3px solid #000;
-  border-bottom: 3px solid #000;
-}
- .aDay {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 10vw;
-  border-radius: 50%;
-}
-#comds {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-}
-#comds > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-#comds p{
-  padding: 6px;
-}
 #deleteModal {
   position: fixed;
   top: 0;
@@ -232,7 +78,6 @@ form > input:first-child:focus, form > select:focus, form > textarea:focus{
   align-items: center;
   height: 20px;
   width: 50px;
-  border: 2px solid var(--whites);
   border-radius: 10px;
 }
 .toggleButton{
@@ -242,6 +87,7 @@ form > input:first-child:focus, form > select:focus, form > textarea:focus{
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  transition: left 0.3s ease-out
 }
 /*Typography*/
 
@@ -293,6 +139,7 @@ body {
   background-color: #e6bbad;
 }
 .completed {
+  color: var(--dark-gray);
   background-color: var(--light-gray);
 }
 .hidden {
@@ -318,4 +165,10 @@ body {
 }
 .toggleButton{
   background-color: var(--secondary-color);
+}
+.btnType1 {
+  background-color: var(--light-gray);
+}
+.btnType2 {
+  color: var(--tertiary-color)
 }

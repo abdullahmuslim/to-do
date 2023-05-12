@@ -128,7 +128,7 @@ export default function Filters(){
             </div>
           </div>
           <div className="mobile desktop">
-            <p id="cancel" onClick={closeFilters}>Cancel</p><p onClick={applyFilters}>Apply</p>
+            <p id="cancel" className="btnType2" onClick={closeFilters}>Cancel</p><p className="btnType2" onClick={applyFilters}>Apply</p>
           </div>
         </div>
       </div>
